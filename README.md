@@ -22,3 +22,4 @@ In later developing steps, a new directory will probably be created so that we c
 - [Bluerobotics sonar library](https://github.com/bluerobotics/ping-python/tree/master)
 - [Bluerobotics temperature sensor library](https://github.com/bluerobotics/tsys01-python/tree/master)
 - [Bluerobotics ms5837 library](https://github.com/bluerobotics/ms5837-python)
+-[Bluerobotics LED INDICATOR code example](https://bluerobotics.com/learn/indicator-light-installation/#example-code)
