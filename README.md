@@ -18,6 +18,7 @@ In later developing steps, a new directory will probably be created so that we c
 ## Links of interest
 
 - [Dashboard building with Tinker (YouTube video)](https://www.youtube.com/watch?v=wXc581tdpRk&t=65s&ab_channel=Programatumicro)
+- [Bluerobotics main GitHub page](https://github.com/bluerobotics)
 - [Bluerobotics sonar library](https://github.com/bluerobotics/ping-python/tree/master)
 - [Bluerobotics temperature sensor library](https://github.com/bluerobotics/tsys01-python/tree/master)
 - [Bluerobotics ms5837 library](https://github.com/bluerobotics/ms5837-python)
