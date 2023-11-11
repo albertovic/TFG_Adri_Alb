@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
 
+#Code used as an example of a server using sockets. This was made in the initial steps of the project in order to deeply 
+#understand the socket library.
+
 import socket
 
 host_ip = "192.168.1.30"

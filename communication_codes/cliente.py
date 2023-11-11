@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
 
+#Code used as an example of a client using sockets. This was made in the initial steps of the project in order to deeply 
+#understand the socket library.
+
 import socket
 import asyncio
 
