@@ -1,15 +1,22 @@
 try:
     import smbus2 as smbus
 except:
-    print('Try sudo apt-get install python-smbus2')
-    
+    # This command has some issues, we should replace it
+    #print('Try sudo apt-get install python-smbus2')
+
+    # Replaced with this command suggestion
+    print('Try pip install smbus2')
+
 from time import sleep
 
 # Models
 MODEL_02BA = 0
 MODEL_30BA = 1
 
-# Oversampling options
+# Oversampling options.
+# Oversampling implies sampling a signal at a higher frequency than the necessary, so that we can later reduce the sampling 
+#  frequency and obtain a more precise representation of the original signal
+# The higher the oversampling, the more precision will be obtained. However, it may require more time to complete the conversion
 OSR_256  = 0
 OSR_512  = 1
 OSR_1024 = 2
@@ -40,6 +47,8 @@ UNITS_Kelvin     = 3
 class MS5837(object):
     
     # Registers
+    # CHANGE.This addres should be changed whenever neeeded. Try i2cdetect -y x. (x should be the number of the i2c port)
+    # Using i2cdetect the addres should be easy to read and paste here
     _MS5837_ADDR             = 0x76  
     _MS5837_RESET            = 0x1E
     _MS5837_ADC_READ         = 0x00
@@ -68,14 +77,16 @@ class MS5837(object):
             "No bus!"
             return False
         
+        # This line sends a reset command to the sensor, so that we can know the initial state of the sensor
         self._bus.write_byte(self._MS5837_ADDR, self._MS5837_RESET)
         
         # Wait for reset to complete
         sleep(0.01)
         
+        # Initialize an empty variable that will be used to store the calibration values
         self._C = []
         
-        # Read calibration values and CRC
+        # Read calibration values and CRC (Cyclic Reundancy Check)
         for i in range(7):
             c = self._bus.read_word_data(self._MS5837_ADDR, self._MS5837_PROM_READ + 2*i)
             c =  ((c & 0xFF) << 8) | (c >> 8) # SMBus is little-endian for word transfers, we need to swap MSB and LSB
@@ -89,10 +100,12 @@ class MS5837(object):
         return True
         
     def read(self, oversampling=OSR_8192):
+
+        # Verifies if the bus exists
         if self._bus is None:
             print("No bus!")
             return False
-        
+        # Verifies if oversampling value is in range
         if oversampling < OSR_256 or oversampling > OSR_8192:
             print("Invalid oversampling option!")
             return False
