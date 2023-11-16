@@ -1,0 +1,4 @@
+#Files and directories to be ignored
+sensor_codes/temp_sensor/__pycache__
+sensor_codes/press_sensor/__pycache__
+sensor_codes/echosounder_sensor/examples/__pycache__
