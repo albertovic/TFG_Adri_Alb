@@ -6,7 +6,7 @@ scripts = ["python3 temp_sensor/example.py", "python3 press_sensor/example.py", 
 
 def run_script_in_new_terminal(script_path):
     # Comando para abrir un nuevo terminal y ejecutar el script
-    command = f'terminal -e "{script_path}"'
+    command = f'gnome-terminal -- bash -c "{script_path}"'
     try:
         # Ejecutar el comando en un nuevo proceso
         subprocess.run(command, shell=True, check=True)
