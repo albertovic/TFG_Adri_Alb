@@ -11,8 +11,8 @@ def run_script_in_new_terminal(script_path):
         # Ejecutar el comando en un nuevo proceso
         subprocess.run(command, shell=True, check=True)
     except subprocess.CalledProcessError as e:
-	print(f"Error al ejecutar el script: {e}")
-	sys.exit(1)
+        print(f"Error al ejecutar el script: {e}")
+        sys.exit(1)
 
 #Execute each script
 for script in scripts:
