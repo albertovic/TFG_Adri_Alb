@@ -5,7 +5,7 @@
 
 import socket
 
-host_ip = "192.168.1.30"
+host_ip = "192.168.2.2"
 port_id = 12345
 
 def leer_temp():
