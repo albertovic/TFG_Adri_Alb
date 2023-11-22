@@ -11,7 +11,7 @@ import os
 import tsys01
 
 #Imports for pressure sensor
-import ms5837
+import sensor_codes.multiple_sensors_pkg.examples.ms5837 as ms5837
 
 #Imports for echosounder sensor (altimeter)
 from brping import Ping1D
