@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-
+# para ejecutar el codigo hace falta, parece que han cambiado los puertos serie sudo python3 simplePingExample.py --device /dev/ttyAMA3
 #simplePingExample.py
 from brping import Ping1D
 import time
