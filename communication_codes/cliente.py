@@ -10,7 +10,7 @@ import asyncio
 #host_ip = "192.168.1.30"
 
 #IP RaspberryPi
-host_ip = ""
+host_ip = "192.168.2.2"
 port_id = 12345
 
 class Client:
