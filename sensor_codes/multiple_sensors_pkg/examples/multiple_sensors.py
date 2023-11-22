@@ -1,6 +1,7 @@
 #!/usr/bin/python
-#To run this script use the python3 command
-
+#To run this script use:
+#sudo python3 multiple_sensors.py --device /dev/ttyAMA4
+#When echosounder connected to serial 4
 
 
 #IMPORTS BEGIN
