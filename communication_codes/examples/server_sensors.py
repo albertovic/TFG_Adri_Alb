@@ -105,7 +105,6 @@ def read_sensors():
             print("Error reading echosounder sensor")
 
         time.sleep(1)
-        os.system ("clear")
     
     #Internal temperature reading
         try:
@@ -155,7 +154,7 @@ class Server:
        
 if __name__ == "__main__":
         server = Server(host_ip, port_id)
-        sensors_thread = threading.Tread(target=read_sensors)
+        sensors_thread = threading.Thread(target=read_sensors)
         sensors_thread.start()
 
         socket_thread = threading.Thread(target=server.start)
